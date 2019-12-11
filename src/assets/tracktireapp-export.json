@@ -1,0 +1,140 @@
+
+  {
+  "Neumaticos" : {
+    "110001" : {
+      "id_tipoNeuma": 110001,
+      "ratioNeu" : 75,
+      "anchuNomNeu" : 215,
+      "cargaNeu" : "12(95PSI)",
+      "idConfNeu" : 5,
+      "marcaNeu" : "Firestone",
+      "tipoNeu" : "R",
+      "velocNeu" : "PR"
+    },
+    "110002" : {
+      "id_tipoNeuma": 110002,
+      "ratioNeu" : 75,
+      "anchuNomNeu" : 215,
+      "cargaNeu" : "12(95PSI)",
+      "idConfNeu" : 5,
+      "marcaNeu" : "Ruedas locas",
+      "tipoNeu" : "R",
+      "velocNeu" : "PR"
+    }
+  },
+  "Empresas" : {
+    "111001" : {
+      "direccionEmp" : "Americo Vespucio 1541, La Florida",
+      "flotaEmp" : {
+        "id_Flota" : 1001,
+        "camiones" : {
+          "101" : {
+            "añoVeh" : 2010,
+            "id_Veh" : 101,
+            "marcaVeh" : "Mercedes Benz",
+            "modeloVeh" : "915-E",
+            "patenteVeh" : "ZZXY77",
+            "cantNeu" : 6,
+            "tipoNeuma" : {
+              "id_tipoNeuma": 110001,
+              "ratioNeu" : 75,
+              "anchuNomNeu" : 215,
+              "cargaNeu" : "12(95PSI)",
+              "idConfNeu" : 5,
+              "marcaNeu" : "Firestone",
+              "tipoNeu" : "R",
+              "velocNeu" : "PR"
+            },
+            "neumaticos" : {
+              "1000001" : {
+                "id" : 1000001,
+                "estado" : "ok",
+                "posicion" : 1
+              },
+              "1000002" : {
+                "id" : 1000002,
+                "estado" : "ok",
+                "posicion" : 2
+              },
+              "1000003" : {
+                "id" : 1000003,
+                "estado" : "ok",
+                "posicion" : 3
+              },
+              "1000004" : {
+                "id" : 1000004,
+                "estado" : "ok",
+                "posicion" : 4
+              },
+              "1000005" : {
+                "id" : 1000005,
+                "estado" : "ok",
+                "posicion" : 5
+              },
+              "1000006" : {
+                "id" : 1000006,
+                "estado" : "ok",
+                "posicion" : 6
+              }
+            }
+          },
+          "102" : {
+            "añoVeh" : 2010,
+            "id_Veh" : 102,
+            "marcaVeh" : "Mercedes Benz",
+            "modeloVeh" : "915-E",
+            "patenteVeh" : "ZZXY78",
+            "cantNeu" : 6,
+            "tipoNeuma" : {
+              "id_tipoNeuma": 110001,
+              "RatioNeu" : 75,
+              "anchuNomNeu" : 215,
+              "cargaNeu" : "12(95PSI)",
+              "idConfNeu" : 5,
+              "marcaNeu" : "Firestone",
+              "tipoNeu" : "R",
+              "velocNeu" : "PR"
+            },
+            "neumaticos" : {
+              "1000007" : {
+                "id" : 1000007,
+                "estado" : "ok",
+                "posicion" : 1
+              },
+              "1000008" : {
+                "id" : 1000008,
+                "estado" : "ok",
+                "posicion" : 2
+              },
+              "1000009" : {
+                "id" : 1000009,
+                "estado" : "ok",
+                "posicion" : 3
+              },
+              "1000010" : {
+                "id" : 1000010,
+                "estado" : "ok",
+                "posicion" : 4
+              },
+              "1000011" : {
+                "id" : 1000011,
+                "estado" : "ok",
+                "posicion" : 5
+              },
+              "1000012" : {
+                "id" : 1000012,
+                "estado" : "ok",
+                "posicion" : 6
+              }
+            }
+          }
+        }
+      },
+      "giroEmp" : "Transporte de Valores",
+      "id_Cliente" : 111001,
+      "nombreEmp" : "SemperFi",
+      "rutEmp" : "77.777.777-5"
+    }
+  },
+  "stringTexto" : "Hola mundo"
+  }
