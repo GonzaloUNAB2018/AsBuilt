@@ -23,33 +23,17 @@ export class AuthJsonDataProvider {
 
   auth: boolean = false;
 
-  constructor(public http: Http) {
+  path : string = './assets/users.json';
+
+  users : any;
+
+  constructor(public http: Http, public http_: HttpClient) {
     console.log('Hello AuthJsonDataProvider Provider');
-    
+    this.getUsers();
   }
 
-  public signInWithEmailAndPassword(email, password){
-    let users : any = [];
-    this.http.get('./assets/auth.json').map(res => res.json() as Array<Item>).subscribe(us=>{
-      users = us;
-      for(var n = 0; n < users.users.length; n++){
-        if(email === users.users[n].email && password === users.users[n].password){
-          console.log('Ok');
-          this.userAuth = users.users[n];
-          //console.log(this.userAuth)
-          this.auth = true;
-          break
-        }
-      }
-    });
-  }
-
-  public registreUser(user){
-    return new Promise(resolve => {
-      this.http.post('./assets/auth.json', JSON.stringify(user)).subscribe(data=>{
-        resolve(data)
-      })
-    })
+  public getUsers(){
+    return this.http_.get(this.path)
   }
 
 }
