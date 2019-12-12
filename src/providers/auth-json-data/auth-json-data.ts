@@ -44,4 +44,12 @@ export class AuthJsonDataProvider {
     });
   }
 
+  public registreUser(user){
+    return new Promise(resolve => {
+      this.http.post('./assets/auth.json', JSON.stringify(user)).subscribe(data=>{
+        resolve(data)
+      })
+    })
+  }
+
 }
