@@ -26,8 +26,9 @@
         </ion-list>
         <button ion-button block (click)="login()" *ngIf="!authState">LOGIN</button>
         <ion-card *ngIf="authState">
+          <img src="{{userDataBase.picture.large}}" style="border-radius: 30px;">
           <ion-card-content>
-            Bienvenido {{userDataBase.name}} {{userDataBase.surname}}
+            Bienvenido {{userDataBase.name.first}} {{userDataBase.name.last}}
           </ion-card-content>
         </ion-card>
       </ion-col>
