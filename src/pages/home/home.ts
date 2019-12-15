@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map'
 import { AuthJsonDataProvider } from '../../providers/auth-json-data/auth-json-data';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -26,6 +27,8 @@ export class HomePage {
 
   usuarios: any;
 
+  data: any;
+
   constructor(
     public navCtrl: NavController,
     public authJsonDataProvider: AuthJsonDataProvider,
@@ -36,14 +39,35 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    //this.login()
+    //this.consultaServidor();
+  }
+
+  consultaServidor(){
+    /*let loadingServer = this.loadingCtrl.create({
+      content: 'Iniciando conexión con el servidor'
+    });
+    loadingServer.present();*/
+    this.http.post('http://localhost:8080/contact', {
+      message : 'Conectado'
+    })
+    .pipe(map(res=>res))
+    .subscribe(data=>{
+      this.data = data
+      console.log(this.data.message);
+    });
+  }
+
+  getAllUsers(){
+    this.http.get('http://localhost:8080/getUsers').subscribe(users=>{
+      console.log(users)
+    })
   }
 
   login(){
     if(this.email && this.password){
       this.authJsonDataProvider.getUsers().subscribe(res=>{
       this.usuarios = res;
-      //console.log(this.usuarios);
+      console.log(this.usuarios);
       console.log(this.email, this.password);
       for(var n = 0; n < this.usuarios.length; n++){
         if(this.email === this.usuarios[n].email && this.password === this.usuarios[n].login.password){
@@ -66,23 +90,6 @@ export class HomePage {
     }else{
       alert('Faltan credenciales')
     }
-  }
-
-  postDatos(){
-    let datos = { nombre:'Edu',email:'edu.revilla.vaquero@gmail.com'}
-    
-    let options = {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    };
-   var url = './assets/auth.json';
-   return new Promise(resolve => {
-    this.http.post(url,JSON.stringify(datos),options)
-       .subscribe(data => {
-         resolve(data);
-        });
-   });
   }
 
 }
